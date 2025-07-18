@@ -226,9 +226,10 @@ def usi
           end
         end
       end
-      
 
-      useful_links.to_a.combination(6).each do |links_being_checked|
+      max_links = [6, useful_links.length].floor
+
+      useful_links.to_a.combination(max_links).each do |links_being_checked|
         cur_foci = foci_not_needing_links.dup
         cur_links = []
         focus_to_links.each do |focus, links_for_focus|
